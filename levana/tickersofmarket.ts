@@ -1,8 +1,8 @@
 import { CosmWasmClient } from "@cosmjs/cosmwasm-stargate";
 
 const factoryAddress =
-  "levana13ygvfysgdnsmu37mzfj36dpsgfy4yk4u9q8wfptqzcg4gujfsfeqqr08v2";
-const rpcEndpoint = "https://rpc-v4-udb8dydv.dragonfire.sandbox.levana.finance";
+  "sei1aldsk8lmc9z3q0ax47zgcluxx4x44ncf0nwnvtdepedg07jqqnrq0uel80";
+const rpcEndpoint = "https://sei.kingnodes.com/";
 
 const runAll = async () => {
   const client = await CosmWasmClient.connect(rpcEndpoint);
@@ -10,7 +10,7 @@ const runAll = async () => {
   const { market_addr: marketAddress } = await client.queryContractSmart(
     factoryAddress,
     {
-      market_info: { market_id: "ATOM_USD" },
+      market_info: { market_id: "ETH_USD" },
     }
   );
 
