@@ -3,7 +3,7 @@ import { DirectSecp256k1HdWallet } from "@cosmjs/proto-signing"
 
 const rpcEndpoint = "https://sei.kingnodes.com/"
 const factoryAddress =
-  "sei1aldsk8lmc9z3q0ax47zgcluxx4x44ncf0nwnvtdepedg07jqqnrq0uel80"
+  "sei1xmpv0ledn5rv46hkyzqjdgc20yyqldlwjv66vc7u4vw5h7fadfssnks3y6"
 const seedPhrase =
   "gloom human walnut bright steel private faith bonus wisdom fly sword pipe"
 
@@ -34,6 +34,7 @@ const runAll = async () => {
   console.log(`Account information: ${JSON.stringify(account)}`)
   const balance = await client.getBalance(address, "sei")
   console.log(`Balance is ${balance.amount}${balance.denom}`)
+  console.log(balance)
   
 }
 
