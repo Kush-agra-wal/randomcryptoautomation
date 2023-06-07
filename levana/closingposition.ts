@@ -12,8 +12,7 @@ const runAll = async () => {
     // This is the prefix used by the Dragonfire testnet
     prefix: "sei"
   })
-  const accounts = await signer.getAccounts()
-  const walletAddress = accounts[0].address
+  const walletAddress = "sei1jzuf4uu2dh5u92wdwvygf5sn6rqd6gx6je7q9c"
 
   const client = await SigningCosmWasmClient.connectWithSigner(
     rpcEndpoint,
@@ -21,32 +20,14 @@ const runAll = async () => {
     { gasPrice: GasPrice.fromString("0.025usei") }
   );
   const factoryAddress="sei1xmpv0ledn5rv46hkyzqjdgc20yyqldlwjv66vc7u4vw5h7fadfssnks3y6"
-  const { market_addr: marketAddress } = await client.queryContractSmart(
-    factoryAddress,
-    {
-      market_info: { market_id: "ETH_USD" },
-    }
-  );
-  const status = await client.queryContractSmart(marketAddress, {
-    status: {}
-  })
-  const collateralAddress = status.collateral.cw20.addr
-
-  const balance = await client.queryContractSmart(collateralAddress, {
-    balance: { address: walletAddress }
-  })
-  console.log(balance)
-  const execResult = await client.execute(
+  const marketAddress="sei1xg9nz66lw2u6esc036tcjug35s06wljenjfn9qntzv6pcee3782q8hyx28"
+  await client.execute(
     walletAddress,
     marketAddress,
-    { close_position: { id: 4296 } },
+    { close_position: { id: "4296" } },
     "auto"
   );
-  console.log(JSON.stringify(execResult));
-  const balance2 = await client.queryContractSmart(collateralAddress, {
-    balance: { address: walletAddress }
-  })
-  console.log(balance2)
+  
 }
 
 runAll()
