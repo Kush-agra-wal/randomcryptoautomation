@@ -18,9 +18,9 @@ const runAll = async () => {
   const client = await SigningCosmWasmClient.connectWithSigner(
     rpcEndpoint,
     signer,
-    { gasPrice: GasPrice.fromString("0.025sei") }
+    { gasPrice: GasPrice.fromString("0.025usei") }
   );
-  const factoryAddress="sei1aldsk8lmc9z3q0ax47zgcluxx4x44ncf0nwnvtdepedg07jqqnrq0uel80"
+  const factoryAddress="sei1xmpv0ledn5rv46hkyzqjdgc20yyqldlwjv66vc7u4vw5h7fadfssnks3y6"
   const { market_addr: marketAddress } = await client.queryContractSmart(
     factoryAddress,
     {
@@ -31,21 +31,21 @@ const runAll = async () => {
     status: {}
   })
   const collateralAddress = status.collateral.cw20.addr
-
+  console.log(marketAddress)
   const balance = await client.queryContractSmart(collateralAddress, {
     balance: { address: walletAddress }
   })
   console.log(balance)
   const msg = Buffer.from(
     JSON.stringify({
-      open_position: { leverage: "5", direction: "long", max_gains: "3.5" },
+      open_position: { leverage: "5", direction: "long", max_gains: "3" },
     })
   ).toString("base64");
 
   const execResult = await client.execute(
     walletAddress,
     collateralAddress,
-    { send: { contract: marketAddress, amount: "100000", msg } },
+    { send: { contract: marketAddress, amount: "550000", msg } },
     "auto"
   );
 
