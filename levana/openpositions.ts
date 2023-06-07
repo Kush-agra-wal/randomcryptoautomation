@@ -4,9 +4,7 @@ import { GasPrice } from "@cosmjs/stargate";
 
 const rpcEndpoint = "https://sei.kingnodes.com/";
 const marketAddress =
-  "sei13utpdt0xflyvh4zgqrfjlhvgvhnacj5rme2lgc89p9t9k0qsf4jqekkekc";
-const collateralAddress =
-  "levana1aakfpghcanxtc45gpqlx8j3rq0zcpyf49qmhm9mdjrfx036h4z5s8vmtpc";
+  "sei1xg9nz66lw2u6esc036tcjug35s06wljenjfn9qntzv6pcee3782q8hyx28";
 const seedPhrase =
   "gloom human walnut bright steel private faith bonus wisdom fly sword pipe";
 
