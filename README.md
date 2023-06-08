@@ -5,6 +5,7 @@ The output of this task shows the following which are extracted using Rest APIs
 2. Order Book
 3. Open orders of an account
 4. ticker
+
 task.ipynb is the final code which can be run using any python compilet or jupyter notebook
 "api keys.txt" consist of api key of the wallet in which 1st line is api key and 2nd line is api secret.
 ## Task 2 : Integration of Levana Protocol api using Typescript
