@@ -1,0 +1,2 @@
+open,ETH_USD,20,short,5,250000
+close,ETH_USD,8070
