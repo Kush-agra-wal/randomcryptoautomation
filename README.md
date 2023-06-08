@@ -15,11 +15,11 @@ Firstly put your seed/mnemonic phrase in "leap seed.txt". This wil be utilised i
 To deploy or close a market position `positions.txt` file is to be updated following a specific schema in diffrent lines for any objective(s) explained below.
 To create an open market position add parameters separated by commas :
 ```open,market-id,leverage,direction,maxgain%/100,collateral/10^6```
-example : `open,ETH_USD,20,short,5,250000` , this will create a short open market position in ETH_USD with 20x leverage with collateral/amount of 0.25 ETH
+example : `open,ETH_USD,20,short,5,250000`  , this will create a short open market position in ETH_USD with 20x leverage with collateral/amount of 0.25 ETH
 
 Similarly to close an open position add following line in `positions.txt`:
 ```close,position-id```
-example: `close,ETH_USD,8070`, this will close the open position with id 8070 in ETH_USD market
+example: `close,ETH_USD,8070`  , this will close the open position with id 8070 in ETH_USD market
 
 ```NOTE: All instructions will be followed in same order as in position.txt file```
 
