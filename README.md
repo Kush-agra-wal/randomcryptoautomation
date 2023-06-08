@@ -1,7 +1,7 @@
 # spotspreadstask
 ## Task 1 : Integration of Delta Exchange api with the help of Python
-The output of this task shows the following which are extracted using Rest APIs <br></br>
-1. Account balance>
+The output of this task shows the following which are extracted using Rest APIs
+1. Account balance
 2. Order Book
 3. Open orders of an account
 4. ticker
